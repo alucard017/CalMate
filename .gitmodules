@@ -1,0 +1,6 @@
+[submodule "Frontend"]
+	path = Frontend
+	url = https://github.com/alucard017/CalMate-Frontend.git
+[submodule "Backend"]
+	path = Backend
+	url = https://github.com/alucard017/CalMate-Backend.git
