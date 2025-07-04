@@ -1,12 +1,6 @@
 services:
-  - name: fastapi-backend
+  - name: calmate-service
     type: web
     env: docker
     plan: free
-    dockerfilePath: Dockerfile.backend
-
-  - name: streamlit-frontend
-    type: web
-    env: docker
-    plan: free
-    dockerfilePath: Dockerfile.frontend
+    dockerfilePath: Dockerfile
