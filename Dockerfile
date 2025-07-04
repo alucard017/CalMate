@@ -9,7 +9,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy app code
 COPY backend/ backend/
 COPY frontend/ frontend/
-COPY ./credentials.json ./credentials.json
+# COPY ./credentials.json ./credentials.json
 
 # Expose both ports
 EXPOSE 8000
