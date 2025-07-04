@@ -3,20 +3,10 @@ services:
     type: web
     env: docker
     plan: free
-    buildCommand: ""
-    startCommand: "uvicorn backend.main:app --host 0.0.0.0 --port 8000"
-    dockerfilePath: ./Dockerfile.backend
-    ports:
-      - 8000
+    dockerfilePath: Dockerfile.backend
 
   - name: streamlit-frontend
     type: web
     env: docker
     plan: free
-    buildCommand: ""
-    startCommand: "streamlit run frontend/app.py --server.port 8501 --server.address 0.0.0.0"
-    dockerfilePath: ./Dockerfile.frontend
-    ports:
-      - 8501
-    depends_on:
-      - fastapi-backend
+    dockerfilePath: Dockerfile.frontend
