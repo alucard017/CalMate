@@ -1,6 +1,0 @@
-services:
-  - name: calmate-service
-    type: web
-    env: docker
-    plan: free
-    dockerfilePath: Dockerfile
