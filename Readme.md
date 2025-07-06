@@ -6,24 +6,64 @@ CalMate is a natural language-powered assistant that helps users **book meetings
 > "Book a meeting next Friday at 10 AM"  
 > "Set a discussion for July 15 at 5 PM"
 
-It uses **FastAPI** for backend processing, **LangGraph** for extracting time from natural text, and **Streamlit** for a beautiful conversational frontend UI.
+It supports **two modes**:
+
+- ⚡ LLM Mode: Uses GPT-3.5 via OpenRouter API for tool-calling and reasoning
+- 🧠 LangGraph Mode: Extracts time using `dateparser` without LLMs (lightweight)
 
 ---
 
 ## 📦 Features
 
-- 📅 Smart date & time parsing using LangGraph + `dateparser`
-- ✅ Checks Google Calendar availability before booking
-- 🔐 Uses Google Service Account credentials to book events securely
-- 🌐 Interactive frontend chat built with Streamlit
-- 🐳 Fully Dockerized (Run both backend & frontend easily)
-- 🔗 Event link is generated and displayed after successful booking
+- ⏰ Smart date/time parsing (`dateparser` + LangGraph or GPT)
+- 📆 Google Calendar integration with availability checking
+- 🔐 Secure booking using Google Service Account
+- 🖼️ Beautiful conversational UI built with **Streamlit**
+- 🤖 Tool-calling powered by **OpenRouter GPT API** (LLM mode)
+- 🐳 Dockerized deployment for both backend & frontend
 
 ---
 
 ## 🗂️ Project Structure
 
 ![CalMate UI Screenshot](Structure.png)
+
+---
+
+## 🧠 Modes Explained
+
+- **LLM Mode** Uses **GPT-3.5 via OpenRouter** for intelligent parsing and tool-calling
+- **Manual Mode** Uses **LangGraph + dateparser** to extract datetime without using any LLMs
+
+To switch between them:
+
+- Use main_llm.py for full LLM integration
+- Use main_manual.py for lightweight mode
+
+---
+
+## 🛠️ Tech Stack
+
+🐍 Python 3.11
+
+⚡ FastAPI
+
+🤖 OpenRouter + GPT-3.5 (LLM mode)
+
+🧠 LangGraph + DateParser (manual mode)
+
+📅 Google Calendar API
+
+🌐 Streamlit
+
+🐳 Docker
+
+---
+
+## Hosted Links
+
+> Frontend: https://calmate-frontend-qn3r.onrender.com
+> Backend: https://calmate-backend.onrender.com
 
 ---
 
@@ -60,6 +100,10 @@ docker-compose up --build
 ## 🧪 Example Booking Flow
 
 - Open localhost:8501
-- Enter your name and email
 - Type commands like : "Book a meeting tomorrow at 11 AM"
 - Get confirmation with a clickable Google Calendar event link
+
+## 🧑‍💻 Developed By
+
+Made with ❤️ by **Apurba**  
+👉 [GitHub](https://github.com/alucard017)
